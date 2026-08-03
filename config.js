@@ -43,14 +43,14 @@ global.igfg = 'Kitsune';
 global.wait = '*ⓘ 𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾....*';
 global.vs = '1.5.5';
 // ❒═════════════════◊【 𝐌𝐄𝐍𝐔𝐒 𝐃𝐄 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎𝐍 】◊═════════════════❒
-global.imagen1 = fs.readFileSync('./Menu2.jpg');
-global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
-global.imagen3 = fs.readFileSync('./src/NaufraMD.png');
-global.imagen4 = fs.readFileSync('./Menu.png');
-global.imagen5 = fs.readFileSync('./src/+18.jpg');
-global.imagen6 = fs.readFileSync('./Menu3.png');
-global.imagen7 = fs.readFileSync('./Menu6.jpg')
-global.imagen8 = fs.readFileSync('./Menu4.jpg')
+global.imagen1 = fs.readFileSync('./src/transparent.png');
+global.imagen2 = fs.readFileSync('./src/transparent.png');
+global.imagen3 = fs.readFileSync('./src/transparent.png');
+global.imagen4 = fs.readFileSync('./src/transparent.png');
+global.imagen5 = fs.readFileSync('./src/transparent.png');
+global.imagen6 = fs.readFileSync('./src/transparent.png');
+global.imagen7 = fs.readFileSync('./src/transparent.png');
+global.imagen8 = fs.readFileSync('./src/transparent.png');
 // ❒═════════════════◊【 𝐄𝐍𝐋𝐀𝐂𝐄𝐒 】◊═════════════════❒
 //Enlaces aleatorios del bot
 global.gp1 = 'https://chat.whatsapp.com/DMNdCYvPGnOIO5Pg8MUQoV'
@@ -60,7 +60,7 @@ global.gp4 = 'https://www.tiktok.com/@naufra.zapp?_t=8kcJigwvtji&_r=1'
 global.channel = 'https://wa.me/5493873687620'
 global.paypal = 'https://www.paypal.me/NaufragoSolano'
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx'
-global.md = 'https://github.com/Bots-WhatsApp-OFC/NaufraZapp-MD'
+global.md = 'https://github.com/LedezmaSune/NaufraZapp-MD-test'
 global.fb = 'https://www.facebook.com/share/8XyV52kz3sfhrzft/?mibextid=qi2Omg'
 // ❒═════════════════◊【 𝐈𝐌𝐀𝐆𝐄𝐍𝐄𝐒 】◊═════════════════❒
 // ❒═════════════════◊【 𝐕𝐈𝐃𝐄𝐎𝐒 】◊═════════════════❒
@@ -87,7 +87,7 @@ global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', s
 global.wm2 = `${dia} ${fecha}\nKitsuneBot`;
 global.gt = 'KitsuneBot';
 global.mysticbot = 'KitsuneBot-MD';
-global.mysticbot = 'https://github.com/Bots-WhatsApp-OFC/NaufraZapp-MD';
+global.mysticbot = 'https://github.com/LedezmaSune/NaufraZapp-MD-test';
 global.waitt = '*ⓘ 𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾....*';
 global.waittt = '*ⓘ 𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾....*';
 global.waitttt = '*ⓘ 𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾....*';
