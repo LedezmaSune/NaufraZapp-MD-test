@@ -1432,9 +1432,8 @@ remoteJid: m.chat, fromMe: false, id: bang, participant: cancellazzione
  * @param {import('@whiskeysockets/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate
  */
 export async function participantsUpdate({id, participants, action}) {
-  const m = mconn
+  const m = { conn: global.conn };
   if (opts['self']) return;
-  //if (m.conn.isInit) return;
   if (global.db.data == null) await loadDatabase();
   const chat = global.db.data.chats[id] || {};
   const botTt = global.db.data.settings[m.conn.user.jid] || {};
