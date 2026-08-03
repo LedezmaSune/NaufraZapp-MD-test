@@ -13,14 +13,14 @@ const {name, author} = require(join(__dirname, './package.json'));
 const {say} = cfonts;
 // const rl = createInterface(process.stdin, process.stdout);
 /* ❒═════════════════◊【】◊═════════════════❒ */
-say('Naufra\nZapp\nMD', {
+say('Kitsune\nBot\nMD', {
   font: 'chrome',
   align: 'center',
-  gradient: ['red', 'magenta']});
-say(`WhatsApp Bot By: SupportBots`, {
+  gradient: ['cyan', 'blue']});
+say(`WhatsApp Bot By: Erick`, {
   font: 'console',
   align: 'center',
-  gradient: ['red', 'magenta']});
+  gradient: ['cyan', 'blue']});
 
 let isRunning = false;
 /**
