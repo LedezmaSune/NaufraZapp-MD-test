@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 let handler = async (m, { conn, text: tiktok, args, command, usedPrefix}) => {
 if (!tiktok) throw '> ⓘ 𝙄𝙣𝙜𝙧𝙚𝙨𝙚 𝙪𝙣 𝙚𝙣𝙡𝙖𝙘𝙚 𝙫𝙖𝙡𝙞𝙙𝙤 𝙙𝙚 𝙩𝙞𝙠𝙩𝙤𝙠 𝙘𝙤𝙣 𝙞𝙢𝙖𝙜𝙚𝙣𝙚𝙨, 𝙥𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙡𝙤: *#tiktokimg https://vm.tiktok.com/ZM2cqBRVS/*';        
 let imagesSent

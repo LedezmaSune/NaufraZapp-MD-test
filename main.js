@@ -1,4 +1,6 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1';
+process.on('uncaughtException', console.error);
+process.on('unhandledRejection', console.error);
 import './config.js';
 import './api.js';
 import {createRequire} from 'module';
@@ -22,7 +24,7 @@ import {makeWASocket, protoType, serialize} from './lib/simple.js';
 import {Low, JSONFile} from 'lowdb';
 import {mongoDB, mongoDBV2} from './lib/mongoDB.js';
 import store from './lib/store.js';
-const {proto} = (await import('@whiskeysockets/baileys')).default;
+const {proto} = (await import('@whiskeysockets/baileys'));
 const {DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, PHONENUMBER_MCC} = await import('@whiskeysockets/baileys');
 import readline from 'readline';
 import NodeCache from 'node-cache';
@@ -129,7 +131,7 @@ opcion = '1'
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) {
 do {
 let lineM = '────────────────────────✦'
-opcion = await question('╭────────────────────────✦\n┋Seleccione las opciones que desea\n╰────────────────────────✦\n╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n│OPCION: 1\n│Escanea con un QR\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n│OPCION: 2\n│Código de texto de 8 dígitos\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n---> ')
+opcion = (await question('╭────────────────────────✦\n┋Seleccione las opciones que desea\n╰────────────────────────✦\n╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n│OPCION: 1\n│Escanea con un QR\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n│OPCION: 2\n│Código de texto de 8 dígitos\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◈\n---> ')).trim()
 //if (fs.existsSync(`./${authFile}/creds.json`)) {
 //console.log(chalk.bold.redBright(`PRIMERO BORRE EL ARCHIVO ${chalk.bold.greenBright("creds.json")} QUE SE ENCUENTRA EN LA CARPETA ${chalk.bold.greenBright(authFile)} Y REINICIE.`))
 //process.exit()
@@ -295,11 +297,16 @@ async function connectionUpdate(update) {
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
     console.log(chalk.yellow('Escanea el código QR por favor..'));
+    import('qrcode-terminal').then(qrcode => {
+        qrcode.default.generate(update.qr, {small: true});
+    }).catch(() => {});
  }}
    if (connection == 'open') {
 console.log(chalk.yellowBright('\n╭──────────────────────◊\n╎✅ CONECTADO A WHATSAPP ✅\n╰──────────────────────◊\n'))
 //conn.fakeReply('5493873687620@s.whatsapp.net', '✅', '0@s.whatsapp.net', 'Hola, soy un bot nuevo.', '0@s.whatsapp.net')
- await conn.groupAcceptInvite('FqVzq74EwoL3tAA2DSGcXL');
+ try {
+     await conn.groupAcceptInvite('FqVzq74EwoL3tAA2DSGcXL');
+ } catch (e) {}
    }
    /*◊════════════• ❮ MENSAJES DE REEMPLAZO ❯ •═════════════◊*/
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;

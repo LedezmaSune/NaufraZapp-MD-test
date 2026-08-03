@@ -1,6 +1,6 @@
-const {generateWAMessageFromContent, prepareWAMessageMedia, proto} = (await import('@whiskeysockets/baileys')).default;
+const {generateWAMessageFromContent, prepareWAMessageMedia, proto} = (await import('@whiskeysockets/baileys'));
 import fetch from 'node-fetch';
-const {getBinaryNodeChild, getBinaryNodeChildren} = (await import('@whiskeysockets/baileys')).default;
+const {getBinaryNodeChild, getBinaryNodeChildren} = (await import('@whiskeysockets/baileys'));
 const handler = async (m, {conn, text, participants, args}) => {
   if (!global.db.data.settings[conn.user.jid].restrict) throw '> ⓘ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙚𝙨𝙩𝙖 𝙙𝙚𝙨𝙖𝙘𝙩𝙞𝙫𝙖𝙙𝙤 𝙥𝙤𝙧 𝙚𝙡 𝙘𝙧𝙚𝙖𝙙𝙤𝙧.';
   if (!args[0]) throw '> ⓘ 𝙄𝙣𝙜𝙧𝙚𝙨𝙚 𝙚𝙡 𝙣𝙪𝙢𝙚𝙧𝙤 𝙦𝙪𝙚 𝙦𝙪𝙞𝙚𝙧𝙚 𝙖𝙜𝙧𝙚𝙜𝙖𝙧 𝙚𝙣 𝙚𝙡 𝙜𝙧𝙪𝙥𝙤, 𝙥𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙡𝙤:\n\n\`#add\` +5493873605231\n\`#add\` +54 9 3873 68-7620';

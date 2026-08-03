@@ -9,6 +9,8 @@ const handler = async (m, _2, msg, pickRandom, isOwner ) => {
   const mention = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
   const {conn, usedPrefix, noPrefix, args, groupMetadata, command, isROwner} = _2;
   if (!isROwner) return;
+  if (m.fromMe) return; // Ignorar si el mensaje lo envió el propio bot (así no ejecuta sus blockquotes >)
+  if (m.text.startsWith('> ⓘ') || m.text.startsWith('=> ⓘ') || m.text.startsWith('> *ⓘ*') || m.text.startsWith('> ✦')) return;
   let _return;
   const name = conn.getName(m.sender);
   let _syntax = '';

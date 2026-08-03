@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 const handler = async (m, {conn, args, command, usedPrefix, text}) => {
   if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '> ⚠️ *Este comando solo es para adultos.*';
   if (!args[0]) throw `> 👑 *Por favor, ingrese el valido de \`\` para descargar, por ejemplo: ${usedPrefix + command} https://www.xvideos.com/video70389849/pequena_zorra_follada_duro*`;
